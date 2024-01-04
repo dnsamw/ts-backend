@@ -4,7 +4,7 @@ import Joi from "joi";
 function validateStar(star: any) {
   const starSchema = Joi.object({
     name: Joi.string().min(3).max(255).required(),
-    bio: Joi.string().min(3).max(1024),
+    bio: Joi.string().min(3),
     dp: Joi.string().min(10),
     dob: Joi.date(),
     ig_link: Joi.string().min(10),
@@ -29,7 +29,6 @@ const starSchema = new mongoose.Schema({
   bio: {
     type: String,
     minLength: 3,
-    maxLength: 1024,
     trim: true,
   },
   dp: { type: String, minLength: 10, trim: true },
