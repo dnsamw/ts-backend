@@ -49,7 +49,7 @@ class Download {
   async deleteFile(fileName: string) {
     this.location = process.env.FILE_DOWNLOAD_LOCATION;
     const filePath = this.location + fileName;
-    console.log(filePath);
+    console.log("DELETED : ", filePath);
 
     try {
       await fsp.unlink(filePath);
