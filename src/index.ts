@@ -6,6 +6,7 @@ import dotenv from "dotenv";
 import Download from "../services/downloader";
 import mongoose from "mongoose";
 import starRouter from "../routes/stars";
+import postRouter from "../routes/posts";
 
 dotenv.config();
 
@@ -39,10 +40,10 @@ app.post("/", async (req, res) => {
 });
 
 app.use("/stars", starRouter);
+app.use("/posts", postRouter);
 
 server.listen(process.env.PORT || 5000, () => {
   console.log(
     `Server is started on http://localhost:${process.env.PORT || 5000}`
   );
 });
-
